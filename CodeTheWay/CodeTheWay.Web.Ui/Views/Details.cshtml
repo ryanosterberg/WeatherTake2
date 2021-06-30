@@ -1,0 +1,14 @@
+﻿@model CodeTheWay.Web.Ui.Models.Weather
+@*
+    ViewData["Title"] = "Details";
+*@
+<h1>Details</h1>
+<p>Date:  @Model.Date</p>
+<p>Average Wind Speed:  @Model.AvgWindSpeed</p>
+<p>High Temperature:  @Model.HighTemp</p>
+<p>Low Temperature:  @Model.LowTemp</p>
+<p>Total Precipitation: @Model.TotalPrecipitation</p>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
