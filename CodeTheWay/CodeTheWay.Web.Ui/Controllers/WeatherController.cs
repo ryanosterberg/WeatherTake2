@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodeTheWay.Web.Ui.Models;
 using CodeTheWay.Web.Ui.Services;
+using CodeTheWay.Web.Ui.Models.MyViewModels;
 
 namespace CodeTheWay.Web.Ui.Controllers
 {
@@ -20,5 +21,14 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var weather = await WeatherService.GetWeather(id);
+            WeatherViewModel weather1 = new WeatherViewModel();
+            return View(weather1.Id);
+        }
+
+        public async Task<I>
     }
 }
