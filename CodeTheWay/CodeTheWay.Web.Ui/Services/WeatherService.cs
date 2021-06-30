@@ -15,5 +15,15 @@ namespace CodeTheWay.Web.Ui.Services
         {
             this.WeatherRepo = new WeatherRepository(dbContext);
         }
+        public async Task<Weather> Create(Weather weather)
+        {
+            return await this.WeatherRepo.Create(weather);
+        }
+        public async Task<Weather> Update(Weather weather)
+        {
+            return await WeatherRepo.Update(weather);
+        }
+
+
     }
 }

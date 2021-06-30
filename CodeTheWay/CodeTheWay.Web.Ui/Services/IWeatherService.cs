@@ -8,5 +8,11 @@ namespace CodeTheWay.Web.Ui.Services
 {
     public interface IWeatherService
     {
+        public Task<Weather> Create(Weather weather);
+
+        public Task<Weather> Update(Weather weather);
+
+        public Task<Weather> GetWeather(Guid id);
+
     }
 }
