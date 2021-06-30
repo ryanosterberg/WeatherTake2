@@ -7,6 +7,7 @@ using CodeTheWay.Web.Ui.Models;
 using CodeTheWay.Web.Ui.Services;
 using CodeTheWay.Web.Ui.Models.MyViewModels;
 
+
 namespace CodeTheWay.Web.Ui.Controllers
 {
     public class WeatherController : Controller
@@ -17,9 +18,9 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             this.WeatherService = weatherService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await WeatherService.GetWeathers());
         }
         public async Task<IActionResult> Create()
         {
