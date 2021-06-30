@@ -27,24 +27,27 @@
 <table>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HighTemp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LowTemp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgWindSpeed)
-            </td>
-            <td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighTemp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowTemp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvgWindSpeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrecipitation)
+        </td>
+        <td>
 
-        </tr>
+    </tr>
     }
 </table>
 <div>
-    <a asp-action="Create">Create a container.</a>
+    <a asp-action="Create">Create a Weather.</a>
 </div>
