@@ -15,24 +15,27 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             this.AppDbContext = dbContext;
         }
-        public async Task<Weather> Create(Weather weather)
+        public async Task<List<Weather>> GetWeathers()
         {
-            var result = await this.AppDbContext.AddAsync(weather);
+            return await this.AppDbContext.Weathers.ToListAsync();
+        }
+        public async Task<Weather> GetWeathers(Guid id)
+        {
+            return await this.AppDbContext.Weathers.FirstOrDefaultAsync(i => i.Id == id);
+        }
+        public async Task<Weather> Create(Weather weathers)
+        {
+            var result = await this.AppDbContext.AddAsync(weathers);
             await this.AppDbContext.SaveChangesAsync();
 
             return result.Entity;
         }
+
         public async Task<Weather> Update(Weather model)
         {
             var result = AppDbContext.Weathers.Update(model);
             await AppDbContext.SaveChangesAsync();
             return result.Entity;
-        }
-
-
-        public async Task<List<Weather>> GetWeathers()
-        {
-            return await this.AppDbContext.Weathers.ToListAsync();
         }
     }
 }
