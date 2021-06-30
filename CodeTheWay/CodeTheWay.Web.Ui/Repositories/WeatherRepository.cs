@@ -15,6 +15,6 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             this.AppDbContext = dbContext;
         }
-
+        public Task<Weather> Create(Weather weathers);
     }
 }
