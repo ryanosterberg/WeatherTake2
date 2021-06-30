@@ -29,6 +29,12 @@ namespace CodeTheWay.Web.Ui.Controllers
             return View(weather1.Id);
         }
 
-        public async Task<I>
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var weather = await WeatherService.GetWeather(id);
+            await WeatherService.Delete(weather);
+            return RedirectToAction("Index");
+        }
+       
     }
 }

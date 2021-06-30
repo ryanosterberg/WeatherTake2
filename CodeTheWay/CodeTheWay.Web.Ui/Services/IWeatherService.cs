@@ -11,5 +11,8 @@ namespace CodeTheWay.Web.Ui.Services
         public Task<List<Weather>> GetWeathers();
 
         public Task<Weather> GetWeather(Guid id);
+
+        public Task<Weather> Delete(Weather weather);
+
     }
 }
