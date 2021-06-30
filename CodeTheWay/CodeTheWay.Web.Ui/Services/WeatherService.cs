@@ -23,5 +23,9 @@ namespace CodeTheWay.Web.Ui.Services
         {
             return await this.WeatherRepo.GetWeathers(id);
         }
+        public async Task<Weather> CreateWeather(Weather weather)
+        {
+            return await this.WeatherRepo.Create(weather);
+        }
     }
 }

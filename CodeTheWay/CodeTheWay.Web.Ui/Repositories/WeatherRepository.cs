@@ -23,5 +23,13 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             return await this.AppDbContext.Weathers.FirstOrDefaultAsync(i => i.Id == id);
         }
+        public async Task<Weather> Create(Weather weathers)
+        {
+            var result = await this.AppDbContext.AddAsync(weathers);
+            await this.AppDbContext.SaveChangesAsync();
+
+            return result.Entity;
+        }
+
     }
 }
