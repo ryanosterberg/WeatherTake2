@@ -25,5 +25,23 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             return View(new WeatherViewModel());
         }
+        public async Task<IActionResult> Register(WeatherViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Weather weather = new Weather()
+                {
+                    Id = model.Id,
+                    HighTemp = model.HighTemp,
+                    LowTemp = model.LowTemp,
+                    AvgWindSpeed = model.AvgWindSpeed,
+                    Date = model.Date,
+                    TotalPrecipitation = model.TotalPrecipitation
+                };
+                var varweather = await WeatherService.CreateWeather(weather);
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
     }
 }

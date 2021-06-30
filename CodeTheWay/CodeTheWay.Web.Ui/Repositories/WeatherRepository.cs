@@ -22,5 +22,6 @@ namespace CodeTheWay.Web.Ui.Repositories
 
             return result.Entity;
         }
+
     }
 }
