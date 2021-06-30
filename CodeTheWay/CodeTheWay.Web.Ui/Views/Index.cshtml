@@ -1,0 +1,45 @@
+﻿@model List<CodeTheWay.Web.Ui.Models.Weather>
+@*
+    ViewData["Title"] = "Index";
+*@
+<h1>Index</h1>
+<div>
+    <table>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Highest Temperature
+            </th>
+            <th>
+                Lowest Temperature
+            </th>
+            <th>
+                Average Wind Speed
+            </th>
+            <th>
+                Total Precipitation
+            </th>
+        </tr>
+    </table>
+</div>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvgWindSpeed)
+            </td>
+            <td>
+                </tr>
+    }

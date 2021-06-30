@@ -8,5 +8,8 @@ namespace CodeTheWay.Web.Ui.Repositories
 {
     public interface IWeatherRepository
     {
+        public Task<List<Weather>> GetWeathers();
+
+        public Task<Weather> GetWeathers(Guid id);
     }
 }
